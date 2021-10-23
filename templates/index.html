@@ -21,10 +21,10 @@
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
       <input type="text" name=" Idioma" placeholder="1=Idioma Nativo, 2=Idioma no nativo" required="required" />
-    	<input type="text" name="Instructor" placeholder="25 categorias: 1 to 25" required="required" />
-        <input type="text" name="Curso" placeholder="26 categorias:1 to 26" required="required" />
+    	<input type="text" name="Instructor" placeholder="25 categorias: 1-25" required="required" />
+        <input type="text" name="Curso" placeholder="26 categorias:1-26" required="required" />
 		<input type="text" name="Semestre" placeholder="1:Verano 2:Regular" required="required" />
-      <input type="text" name="Size" placeholder="Class size:1 to 70" required="required" />
+      <input type="text" name="Size" placeholder="Class size:1-70" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predecir</button>
     </form>
