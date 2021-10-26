@@ -19,7 +19,7 @@ def login():
     error = None
     if request.method == 'POST':
         if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            error = 'Invalid Credentials. Please try again.'
+            error = 'Credenciales no válidas. Inténtalo de nuevo.'
         else:
             return redirect(url_for('home'))
     return render_template('login.html', error=error)
@@ -48,7 +48,7 @@ def predict():
 
 
     return render_template('index.html', 
-        prediction_text='Teaching_performance is {} where low:1, medium:2 and high:3'.format(output)
+        prediction_text='Teaching_performance es {} Donde Bajo:1, Medio:2 and Alto:3'.format(output)
         )
 
 
