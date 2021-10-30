@@ -39,22 +39,22 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
-    print(f'final_features={final_features}')
-    prediction = model.predict(final_features)
+    int_features = [int(x) for x in request.form.values()] #recolectar valores de website
+    final_features = [np.array(int_features)] # colocar los valores en numpy
+    print(f'final_features={final_features}') # imprimir
+    prediction = model.predict(final_features) # prediccion 
 
-    output = round(prediction[0], 2)
+    output = round(prediction[0], 2) 
 
 
     return render_template('index.html', 
-        prediction_text='Teaching_performance es {} Donde Bajo:1, Medio:2 and Alto:3'.format(output)
+        prediction_text='Teaching_performance es {} Donde Bajo:1, Medio:2 and Alto:3'.format(output)  
         )
 
 
-
+# Crear api 
 @app.route('/predict_api',methods=['POST'])
-def predict_api():
+def predict_api():  
     '''
     For direct API calls trought request
     '''
@@ -70,7 +70,7 @@ def predict_api():
 
     print("modeldone1")
     return jsonify(json_output)
-
+#correr flask 
 if __name__=="__main__":
     app.run(debug=True,host=os.getenv('IP', '0.0.0.0'), 
             port=int(os.getenv('PORT', 4444)))
